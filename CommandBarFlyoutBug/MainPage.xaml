@@ -8,8 +8,32 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <Grid>
-        <CommandBar DefaultLabelPosition="Right" OverflowButtonVisibility="Visible">
+    <StackPanel Orientation="Vertical">
+        <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text=" 1- CommandBar MenuFlyout Placement Bug after AppBarButton goes into Overflow" />
+        <RichTextBlock>
+            <Paragraph>
+                <Run Text=" 1.1 - Click on the most-right AppBarButton and open its MenuFlyout." />
+                <LineBreak />
+                <Run Text="1.2 - Notice the placement of the Flyout and how easy it is to dismiss." />
+                <LineBreak />
+                <Run Text="1.3 - Resize the CommandBar so that the AppBarButton goes into the Overflow flyout." />
+                <LineBreak />
+                <Run Text="1.4 - Open the Overflow flyout and open the AppBarButton MenuFlyout." />
+                <LineBreak />
+                <Run Text="1.5 - Notice the placement of the Flyout and how easy it is to dismiss." />
+                <LineBreak />
+                <Run Text="1.6 - Resize the CommandBar so that the AppBarButton goes back into the CommandBar." />
+                <LineBreak />
+                <Run Text="1.7 - Click on the AppBarButton and open its MenuFlyout." />
+                <LineBreak />
+                <Run Text="1.8 - Notice the wrong placement of the MenuFlyout which is the same as when it was opened in the Overflow. Now, it is hard to dismiss it as well." />
+                <LineBreak />
+            </Paragraph>
+        </RichTextBlock>
+        <CommandBar
+            Margin="0,0,0,50"
+            DefaultLabelPosition="Right"
+            OverflowButtonVisibility="Visible">
             <AppBarButton Icon="Emoji" Label="AppBarButton" />
             <AppBarButton Icon="Emoji" Label="AppBarButton" />
             <AppBarButton Icon="Emoji" Label="AppBarButton" />
@@ -18,7 +42,7 @@
             <AppBarButton Icon="Emoji" Label="AppBarButton" />
             <AppBarButton Icon="Emoji" Label="AppBarButton" />
             <AppBarButton Icon="Emoji" Label="AppBarButton" />
-            <AppBarButton Icon="Emoji" Label="AppBarButtonWithFlyout">
+            <AppBarButton Icon="Flag" Label="AppBarButtonWithMenuFlyout">
                 <AppBarButton.Flyout>
                     <MenuFlyout>
                         <MenuFlyoutItem Icon="Flag" Text="Flyout" />
@@ -29,5 +53,32 @@
                 </AppBarButton.Flyout>
             </AppBarButton>
         </CommandBar>
-    </Grid>
+
+        <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text=" 2- CommandBar AppBarButton not stretched in Overflow if width is set" />
+        <RichTextBlock>
+            <Paragraph>
+                <Run Text=" 2.1 - Observe the most-right AppBarButton which has a width of 50." />
+                <LineBreak />
+                <Run Text="2.2 - Resize the CommandBar so that the AppBarButton goes into the Overflow flyout." />
+                <LineBreak />
+                <Run Text="2.3 - Open the Overflow flyout and observe the AppBarButton." />
+                <LineBreak />
+                <Run Text="2.4 - The AppBarButton is not getting stretched in the Overflow flyout like the other buttons." />
+                <LineBreak />
+                <Run Text="***Note: Changing the width of all AppBarButton through the default globaly applied style allows the AppBarButton to get stretched inside the Overflow flyout." />
+            </Paragraph>
+        </RichTextBlock>
+        <CommandBar DefaultLabelPosition="Right" OverflowButtonVisibility="Visible">
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Width="50" Icon="Flag" />
+        </CommandBar>
+
+    </StackPanel>
 </Page>
