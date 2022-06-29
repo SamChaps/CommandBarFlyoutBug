@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="CommandBarFlyoutBug.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:CommandBarFlyoutBug"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <CommandBar DefaultLabelPosition="Right" OverflowButtonVisibility="Visible">
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButton" />
+            <AppBarButton Icon="Emoji" Label="AppBarButtonWithFlyout">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Icon="Flag" Text="Flyout" />
+                        <MenuFlyoutItem Icon="Flag" Text="Flyout" />
+                        <MenuFlyoutItem Icon="Flag" Text="Flyout" />
+                        <MenuFlyoutItem Icon="Flag" Text="Flyout" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+        </CommandBar>
+    </Grid>
+</Page>
